@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     /// <summary>
-    /// Инициализирует количество дополнительных прыжков и получает компонент Rigidbody2D
-    /// для управления физикой игрока.
+    /// Initializes the number of extra jumps and gets the Rigidbody2D component
+    /// to handle the player's physics.
     /// </summary>
     private void Start()
     {
@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Проверяет, находится ли игрок на земле. Обрабатывает ввод для движения по горизонтали и плавно изменяет 
-    /// скорость. Разворачивает игрока, если он меняет направление движения.
+    /// Checks if the player is grounded. Handles horizontal movement input and smoothly
+    /// adjusts the velocity. Flips the player if they change movement direction.
     /// </summary>
     private void FixedUpdate()
     {
@@ -51,8 +51,8 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Сбрасывает количество дополнительных прыжков, если игрок на земле. Обрабатывает прыжки, включая дополнительные
-    /// прыжки в воздухе и обычный прыжок на земле.
+    /// Resets the number of extra jumps if the player is grounded. Handles jumping,
+    /// including extra jumps in the air and a regular jump on the ground.
     /// </summary>
     private void Update()
     {
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Меняет направление, в котором смотрит игрок, инвертируя масштаб по оси X.
+    /// Changes the direction the player is facing by inverting the scale on the X axis.
     /// </summary>
     void FlipPlayer()
     {
