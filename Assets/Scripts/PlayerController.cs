@@ -3,12 +3,12 @@
 public class PlayerController : MonoBehaviour
 {
     private float moveInput;
-    private bool facingRight= true;
     private bool isGrounded;
     private int extraJumps;
     private float targetVelocityX;
     private float currentVelocityX;
     private Rigidbody2D rb;
+    [HideInInspector] public bool facingRight;
 
     public float speed = 5;
     public float jumpForce = 5;
@@ -24,8 +24,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        extraJumps = extraJumpsValue;
         rb = GetComponent<Rigidbody2D>();
+        facingRight = true;
+        extraJumps = extraJumpsValue;
     }
 
     /// <summary>
