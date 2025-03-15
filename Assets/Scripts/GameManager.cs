@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public static GameManager Instance { get; private set; }
 
-    public LevelManager levelManagerPrefab;
-
-    private LevelManager _levelManager;
+    public LevelManager levelManager;
 
     /// <summary>
     /// Initializes the GameManager instance and ensures it persists across scene loads.
@@ -26,18 +24,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        InitializeManagers();
-    }
-
-    /// <summary>
-    /// Initializes and instantiates the LevelManager from a prefab.
-    /// Sets the LevelManager as a child of the GameManager.
-    /// </summary>
-    private void InitializeManagers()
-    {
-        _levelManager = Instantiate(levelManagerPrefab);
-        _levelManager.transform.SetParent(transform);
     }
 
     /// <summary>
@@ -45,6 +31,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        _levelManager.InitializeLevel();
+        levelManager.InitializeLevel();
     }
 }
